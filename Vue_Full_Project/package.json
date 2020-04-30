@@ -11,14 +11,17 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "vue": "2.3.3",
     "chart.js": "2.5.0",
     "vue-chartjs": "2.6.3",
     "vue-router": "2.5.3",
-    "vue-strap": "github:wffranco/vue-strap"
+    "vue-strap": "github:wffranco/vue-strap",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "7.1.1",
@@ -90,5 +93,6 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  }
+  },
+  "snyk": true
 }
